@@ -1,0 +1,38 @@
+/* Bihar Tourism — Shared Styles v3 (Light Theme) */
+:root{
+    --cream:#FAF7F2;--white:#FFFFFF;--charcoal:#1A1A1A;--dark:#0D0D0D;
+    --terracotta:#C75B3A;--terracotta-light:#E07B5B;--terracotta-glow:rgba(199,91,58,0.15);
+    --forest:#1B5E3B;--forest-light:#2A8B57;--forest-glow:rgba(27,94,59,0.12);
+    --sand:#E8DDD0;--stone:#B5A898;--muted:#8A8279;
+    --border:rgba(0,0,0,0.08);--border-dark:rgba(0,0,0,0.12);
+    --transition:all 0.45s cubic-bezier(0.22,1,0.36,1);
+    --serif:'DM Serif Display',Georgia,serif;
+    --sans:'Space Grotesk',system-ui,sans-serif;
+    --primary:var(--terracotta);--primary-light:var(--terracotta-light);
+    --text-main:var(--charcoal);--text-muted:var(--muted);--text-dim:var(--stone);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--charcoal);font-family:var(--sans);line-height:1.6;overflow-x:hidden;}
+
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--cream);}
+::-webkit-scrollbar-thumb{background:var(--sand);border-radius:10px;}
+::-webkit-scrollbar-thumb:hover{background:var(--terracotta);}
+
+nav.glass{
+    background:rgba(250,247,242,0.85);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);
+    border-bottom:1px solid var(--border);height:76px;
+}
+
+.hero-bg{position:relative;min-height:55vh;background-size:cover;background-position:center;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(250,247,242,0.3),rgba(250,247,242,1));}
+
+.form-label{display:block;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--stone);margin-bottom:10px;}
+.form-input{width:100%;padding:16px 20px;background:var(--cream) !important;border:1px solid var(--border) !important;border-radius:14px;color:var(--charcoal) !important;font-family:var(--sans);font-size:0.95rem;outline:none;transition:border-color 0.3s;}
+.form-input:focus{border-color:var(--terracotta) !important;background:var(--white) !important;}
+
+.form-submit{width:100%;padding:18px;border-radius:14px;background:var(--charcoal);color:#fff;font-family:var(--sans);font-size:0.88rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;border:none;cursor:pointer;transition:var(--transition);}
+.form-submit:hover{background:var(--terracotta);transform:translateY(-2px);box-shadow:0 12px 30px var(--terracotta-glow);}
+
+@keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
