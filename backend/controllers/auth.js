@@ -87,20 +87,24 @@ exports.logout = async (req, res, next) => {
 
 // Get token from model, create cookie and send response
 const sendTokenResponse = (user, statusCode, res) => {
-    // Create token
+    // 1. Token generate karein
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
         expiresIn: process.env.JWT_EXPIRE,
     });
 
+    // 2. Cookie options set karein
     const options = {
+        // Yahan variable ka naam check karein: process.env.COOKIE_EXPIRE
         expires: new Date(
-            Date.now() + process.env.JWT_COOKIE_EXPIRE * 24 * 60 * 60 * 1000
+            Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
         ),
         httpOnly: true,
     };
 
+    // 3. Production (Render) ke liye extra security
     if (process.env.NODE_ENV === 'production') {
         options.secure = true;
+        options.sameSite = 'none'; // Ye zaroori hai agar frontend aur backend alag URL par hain
     }
 
     res.status(statusCode).cookie('token', token, options).json({
