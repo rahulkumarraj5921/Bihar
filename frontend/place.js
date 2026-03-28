@@ -1,6 +1,6 @@
 // Bihar Tourism - Place Detail Page (with Admin Controls)
 const FALLBACKS = {
-    Religious: '/assets/images/mahabodhi.png',
+    Religious: '/images/mahabodhi.png',
     Heritage: '/assets/images/nalanda.png',
     Nature: '/assets/images/rajgir.png',
     Other: '/assets/images/mahabodhi.png'
